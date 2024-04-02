@@ -27,12 +27,20 @@
           >
             <input
               type="text"
-              name=""
-              id="typeTodo"
-              class="col-auto px-5 py-1"
+              class="col-auto px-1 py-1 mb-3"
+              v-model.trim="inputValue"
+              @keydown.enter="pushTodo()"
+              placeholder="Inserisci cose da fare"
             />
-            <ul class="col-auto card px-5 py-1">
-              <li>ciao</li>
+            <ul class="col-auto card px-5 py-1" name="lista">
+              <li
+                v-for="(obj, i) in todo"
+                @click="isTrue(obj)"
+                :class="{ 'true': obj.done }"
+                class="card p-2"
+              >
+                {{obj.text}}
+              </li>
             </ul>
           </div>
         </section>

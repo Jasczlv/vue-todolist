@@ -27,3 +27,11 @@ input {
   width: 300px;
   margin-bottom: 20px;
 }
+
+.true {
+  text-decoration: line-through;
+}
+
+.card {
+  user-select: none;
+}
